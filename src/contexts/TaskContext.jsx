@@ -24,7 +24,7 @@ export function TaskProvider({ children }) {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const res = await fetch("http://localhost:8000/api/tasks", {
+      const res = await fetch("https://vercel-backend-2-aznm.onrender.com/api/tasks", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,7 +64,7 @@ export function TaskProvider({ children }) {
         formData.append("documents", doc.file);
       });
 
-      const res = await fetch("http://localhost:8000/api/tasks", {
+      const res = await fetch("https://vercel-backend-2-aznm.onrender.com/api/tasks", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

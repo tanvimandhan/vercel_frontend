@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
     const token = localStorage.getItem('token');
     if (token) {
       axios
-        .get('http://localhost:8000/api/auth/me', {
+        .get('https://vercel-backend-2-aznm.onrender.com/api/auth/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
     setIsLoading(true);
     try {
       console.log(1)
-      const res = await axios.post('http://localhost:8000/api/auth/login', {
+      const res = await axios.post('https://vercel-backend-2-aznm.onrender.com/api/auth/login', {
         email,
         password,
       });
@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
   const register = async (email, password, name) => {
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:8000/api/auth/register', {
+      const res = await axios.post('https://vercel-backend-2-aznm.onrender.com/api/auth/register', {
         email,
         password,
         name,
@@ -79,7 +79,7 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('token');
   };
   const createTask = async (taskData) => {
-    const res = await fetch('/api/tasks/create', {
+    const res = await fetch('https://vercel-backend-2-aznm.onrender.com/api/tasks/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

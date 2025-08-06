@@ -46,7 +46,7 @@ export function TaskDetails({ taskId, onClose }) {
   const handleDelete = async (taskId) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:8000/api/tasks/${taskId}`, {
+      await fetch(`https://vercel-backend-2-aznm.onrender.com/api/tasks/${taskId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -65,7 +65,7 @@ export function TaskDetails({ taskId, onClose }) {
 
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:8000/api/tasks/${taskId}`, {
+    fetch(`https://vercel-backend-2-aznm.onrender.com/api/tasks/${taskId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
