@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { TaskProvider } from "@/contexts/TaskContext";
 import Index from "./Pages/Index";
-import NotFound from "./pages/NotFound";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { TaskList } from "./components/tasks/TaskList";
 import { LoginForm } from "./components/auth/LoginForm";
@@ -48,7 +47,7 @@ const App = () => (
               }
             />
             <Route path="/dashboard" element={<Index/>}/>
-            <Route path="*" element={<NotFound />} />
+            
           </Routes>
         
 
