@@ -63,7 +63,9 @@ export function AuthProvider({ children }) {
         email,
         password,
         name,
-      });
+      },
+      { headers: { 'Content-Type': 'application/json' } }
+    );
 
       localStorage.setItem('token', res.data.token);
       setUser(res.data.user);
